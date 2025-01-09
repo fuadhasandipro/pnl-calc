@@ -1,4 +1,3 @@
-// script.js
 document.getElementById("calculateBtn").addEventListener("click", () => {
   const initialPrice = parseFloat(
     document.getElementById("initialPrice").value
@@ -44,6 +43,12 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
   const netProfit = totalValueAtTarget - totalInvestment;
   const overallPercentage = (netProfit / totalInvestment) * 100;
 
+  // Calculate second investment required to fully cover loss (net profit = 0)
+  const requiredSecondInvestmentUTK =
+    (initialInvestment - firstInvestmentValueAtTarget) /
+    (targetPrice - currentPrice);
+  const requiredSecondInvestment = requiredSecondInvestmentUTK * currentPrice;
+
   // Display results
   document.getElementById("resultSummary").innerHTML = `
       <strong>First Investment:</strong><br>
@@ -56,6 +61,13 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
   
       <strong>Overall Performance:</strong><br>
       Total Value at Target Price: $${totalValueAtTarget.toFixed(2)}<br>
-      Net Profit: $${netProfit.toFixed(2)} (${overallPercentage.toFixed(2)}%)
+      Net Profit: $${netProfit.toFixed(2)} (${overallPercentage.toFixed(
+    2
+  )}%)<br><br>
+  
+      <strong>To Fully Cover Loss:</strong><br>
+      Required Second Investment: $${requiredSecondInvestment.toFixed(
+        2
+      )} at current price of $${currentPrice.toFixed(5)}<br>
     `;
 });
