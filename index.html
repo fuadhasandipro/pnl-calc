@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investment Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <h1>Crypto Investment Calculator</h1>
+      <div class="inputs">
+        <label for="initialPrice">Initial Price (e.g., 0.16250):</label>
+        <input
+          type="number"
+          id="initialPrice"
+          step="0.00001"
+          placeholder="0.16250"
+        />
+
+        <label for="initialInvestment">Initial Investment ($):</label>
+        <input type="number" id="initialInvestment" placeholder="200" />
+
+        <label for="currentPrice">Current Price (e.g., 0.078):</label>
+        <input
+          type="number"
+          id="currentPrice"
+          step="0.00001"
+          placeholder="0.078"
+        />
+
+        <label for="secondInvestment">Second Investment ($):</label>
+        <input type="number" id="secondInvestment" placeholder="200" />
+
+        <label for="targetPrice">Target Price (e.g., 0.119):</label>
+        <input
+          type="number"
+          id="targetPrice"
+          step="0.00001"
+          placeholder="0.119"
+        />
+      </div>
+
+      <button id="calculateBtn">Calculate</button>
+
+      <div id="results" class="results">
+        <h2>Results</h2>
+        <p id="resultSummary">Enter values to see results!</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
